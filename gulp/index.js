@@ -33,7 +33,8 @@ gulp.task('statics', function() {
 gulp.task('styles', function() {
     return gulp.src('./src/sass/index.sass')
         .pipe(sass({
-            includePaths: require('node-normalize-scss').includePaths
+            includePaths: require('node-normalize-scss').includePaths,
+            outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(gulp.dest('dist/css'))
         .pipe(connect.reload());
