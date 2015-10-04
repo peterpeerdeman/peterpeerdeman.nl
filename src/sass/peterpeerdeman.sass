@@ -1,0 +1,73 @@
+body
+    background-color: #f8f8f8
+    color: $color-text
+    font-family: 'Vollkorn', serif
+    font-size: 14px
+
+a
+    color: $color-text
+    transition: .3s all
+    &:hover
+        color: $color-text-hover
+        transition: .3s all
+
+.pp-subtle
+    color: $color-subtle
+    &:hover
+        color: $color-subtle-hover
+
+.pp-intro
+    padding: 140px 0
+
+blockquote
+    font-style: italic
+    width: 80%
+    margin: 0 auto
+
+    footer
+        margin-top: 5px
+        color: $color-subtle
+        font-style: normal
+        font-size: 13px
+        text-transform: uppercase
+
+.pp-imagecontainer
+    background-color: black
+    img
+        width: 100%
+
+@media only screen and (min-width: 480px)
+    body
+        font-size: 16px
+
+    blockquote
+        width: 300px
+        footer
+            font-size: 15px
+
+    .pp-intro
+        padding: 100px 0
+
+@media only screen and (min-width: 768px)
+    body
+        font-size: 20px
+
+    blockquote
+        width: 500px
+        footer
+            font-size: 18px
+
+    .pp-intro
+        padding: 218px 0
+
+@media only screen and (min-width: 1024px)
+    body
+        font-size: 20px
+
+    blockquote
+        width: 500px
+        footer
+            font-size: 18px
+
+    .pp-intro
+        padding: 218px 0
