@@ -2,7 +2,6 @@
   "name": "peterpeerdeman.nl",
   "version": "1.0.0",
   "description": "my personal website",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +18,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.2",
     "parcel": "^2.6.2",
-    "sass": "^1.37.5"
+    "sass": "^1.37.5",
+    "sharp": "^0.29.3"
   }
 }
