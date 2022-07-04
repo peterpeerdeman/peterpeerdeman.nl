@@ -17,10 +17,8 @@
   },
   "homepage": "https://github.com/peterpeerdeman/peterpeerdeman.nl",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-connect": "^5.7.0",
-    "gulp-sass": "^5.0.0",
-    "node-normalize-scss": "^8.1.2",
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "^2.6.2",
     "sass": "^1.37.5"
   }
 }
