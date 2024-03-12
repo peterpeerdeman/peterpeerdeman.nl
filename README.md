@@ -4,6 +4,6 @@
 
 `brew install sass/sass/sass`
 
-## build 
+## production build 
 
-`npx parcel src/index.html`
+`npx parcel build src/index.html`

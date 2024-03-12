@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "my personal website",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx parcel build src/index.html"
   },
   "repository": {
     "type": "git",
