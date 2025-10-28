@@ -1,7 +1,9 @@
+@use "sass:color"
+
 $color-text: #444
-$color-text-hover: lighten($color-text, 30%)
+$color-text-hover: color.adjust($color-text, $lightness: 30%)
 $color-subtle: #A7A7A7
-$color-subtle-hover: lighten($color-text, 30%)
+$color-subtle-hover: color.adjust($color-text, $lightness: 30%)
 
 $color-primary-blue: #334D5C
 $color-primary-teal: #45B29D
