@@ -1,142 +1,293 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
   <head
     prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"
   >
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Peter Peerdeman</title>
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://peterpeerdeman.nl" />
-    <meta property="og:title" content="Peter Peerdeman" />
-    <meta
-      property="og:image"
-      content="http://peterpeerdeman.nl/img/peterpeerdeman.jpg"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Peter Peerdeman" />
     <meta
       name="description"
       content="I'm a technologist with decades of experience in the technology industry. I've embraced various roles ranging from engineer and architect to management positions in software development agencies and technical due diligence for investors I cherish my kids and marriage, savor fresh coffee flavors, and perform live electronic music. I'm exploring the meaning of health span through nutrition and exercise. Aside from all that, I'm an avid note maker and I research all sorts of security, software and hardware topics." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://peterpeerdeman.nl/" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://peterpeerdeman.nl/" />
+    <meta property="og:title" content="Peter Peerdeman" />
+    <meta
+      property="og:description"
+      content="Technologist, parent, engineer and researcher. Decades of experience across software development agencies and technical due diligence for investors." />
+    <!-- Served verbatim from static/ so the URL stays stable for scrapers,
+         which cannot follow Parcel's content-hashed asset names. -->
+    <meta property="og:image" content="https://peterpeerdeman.nl/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Peter Peerdeman" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="apple-touch-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="apple-touch-icon-60x60.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="apple-touch-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="apple-touch-icon-76x76.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="apple-touch-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="apple-touch-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="apple-touch-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="apple-touch-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="apple-touch-icon-180x180.png"
-    />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link
       rel="icon"
       type="image/png"
       href="android-chrome-192x192.png"
       sizes="192x192"
     />
-
-    <meta name="msapplication-square70x70logo" content="smalltile.png" />
-    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
-    <meta name="msapplication-wide310x150logo" content="widetile.png" />
-    <meta name="msapplication-square310x310logo" content="largetile.png" />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Vollkorn&family=Vollkorn+SC&display=swap"
-      rel="stylesheet"
-      type="text/css"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon-180x180.png"
     />
-    <link rel="stylesheet" href="css/index.css" />
+
+    <!-- Inlined: the whole stylesheet is smaller than the request that would
+         fetch it, so this removes the last render-blocking round trip. -->
+    <style>
+      /* Vollkorn, latin subset. Self-hosted so no connection to
+         fonts.googleapis.com or fonts.gstatic.com is needed to paint text. */
+      @font-face {
+        font-family: 'Vollkorn';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('fonts/vollkorn-latin-400.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* Vollkorn SC is only ever used for the seven morphing words, so it is
+         subset to the sixteen letters those words contain. */
+      @font-face {
+        font-family: 'Vollkorn SC';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('fonts/vollkorn-sc-400-subset.woff2') format('woff2');
+        unicode-range: U+41-49, U+4C, U+4E-50, U+52-54, U+61-69, U+6C, U+6E-70,
+          U+72-74;
+      }
+
+      :root {
+        --color-text: #444;
+        --color-text-hover: #919191;
+        --color-subtle: #a7a7a7;
+        --color-subtle-hover: #919191;
+      }
+
+      body {
+        background-color: #fff;
+        color: var(--color-text);
+        font-family: 'Vollkorn', serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0px;
+      }
+
+      a {
+        color: var(--color-text);
+        transition: 0.3s all;
+
+        &:hover {
+          color: var(--color-text-hover);
+          transition: 0.3s all;
+        }
+      }
+
+      .pp-subtle {
+        color: var(--color-subtle);
+
+        &:hover {
+          color: var(--color-subtle-hover);
+        }
+
+        img {
+          height: 20px;
+          width: 20px;
+          opacity: 0.4;
+        }
+      }
+
+      /* Inline icons: sized and coloured like the text they sit in,
+         matching the em-box metrics of the font they replaced. */
+      .pp-icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+        vertical-align: -0.143em;
+      }
+
+      .pp-intro {
+        padding: 0px 0;
+      }
+
+      blockquote {
+        font-style: normal;
+        width: 80%;
+        margin: 0 auto;
+
+        footer {
+          margin-top: 5px;
+          color: var(--color-subtle);
+          font-size: 20px;
+        }
+      }
+
+      .pp-imagecontainer {
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+      }
+
+      @media only screen and (min-width: 480px) {
+        body {
+          font-size: 25px;
+        }
+
+        blockquote footer {
+          font-size: 30px;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        body {
+          font-size: 28px;
+        }
+
+        blockquote {
+          max-width: 700px;
+
+          footer {
+            font-size: 30px;
+          }
+        }
+
+        .pp-imagecontainer img {
+          height: 500px;
+        }
+
+        .pp-subtle img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        body {
+          font-size: 30px;
+        }
+
+        blockquote {
+          width: 80%;
+          max-width: 1024px;
+
+          footer {
+            font-size: 35px;
+          }
+        }
+      }
+
+      /* Title animation, inspired by Amit Sheen https://codepen.io/amit_sheen/pen/xxqYzvm */
+      .morphing {
+        position: relative;
+        font-family: 'Vollkorn SC', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 50px;
+        margin: 0;
+        background-color: #fff;
+        color: #000;
+        min-height: 25vh;
+        filter: contrast(25) blur(1px);
+      }
+
+      .word {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: word 25s infinite ease-in-out;
+
+        /* Stagger 7 words evenly across the cycle: 25s / 8 * i - 25s */
+        &:nth-child(1) { animation-delay: -25s; }
+        &:nth-child(2) { animation-delay: -21.875s; }
+        &:nth-child(3) { animation-delay: -18.75s; }
+        &:nth-child(4) { animation-delay: -15.625s; }
+        &:nth-child(5) { animation-delay: -12.5s; }
+        &:nth-child(6) { animation-delay: -9.375s; }
+        &:nth-child(7) { animation-delay: -6.25s; }
+      }
+
+      @keyframes word {
+        0%, 5%, 100% { filter: blur(0px); opacity: 1; }
+        20%, 80% { filter: blur(0.4em); opacity: 0; }
+      }
+
+      /* The words are stacked on top of each other, so without the animation
+         they would overlap. Show only the first and drop the gooey filter. */
+      @media (prefers-reduced-motion: reduce) {
+        .morphing {
+          filter: none;
+        }
+
+        .word {
+          animation: none;
+
+          &:not(:first-child) {
+            display: none;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 480px) {
+        .morphing { font-size: 75px; }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .morphing { font-size: 100px; }
+      }
+    </style>
   </head>
   <body class="h-card">
-    <!--[if lt IE 8]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
-        your experience.
-      </p>
-    <![endif]-->
-
-    <div class="morphing">
-      <div class="word">technologist</div>
-      <div class="word">parent</div>
-      <div class="word">snoffeecob</div>
-      <div class="word">teder</div>
-      <div class="word">engineer</div>
-      <div class="word">athlete</div>
-      <div class="word">researcher</div>
-    </div>
+    <h1 class="morphing">
+      <span class="word">technologist</span>
+      <span class="word">parent</span>
+      <span class="word">snoffeecob</span>
+      <span class="word">teder</span>
+      <span class="word">engineer</span>
+      <span class="word">athlete</span>
+      <span class="word">researcher</span>
+    </h1>
     <section class="pp-intro">
       <blockquote class="p-note">
         <p>
-          I'm a <a href="https://hashbang.nl/about" rel="nofollow"
-            >technologist</a
-          > with decades of experience in the technology industry. I've embraced
-          various roles ranging from engineer and architect to management
-          positions in
-          <a href="https://lifely.nl" rel="nofollow"
-            >software development agencies</a
-          >
+          I'm a <a href="https://hashbang.nl/about">technologist</a> with decades
+          of experience in the technology industry. I've embraced various roles
+          ranging from engineer and architect to management positions in
+          <a href="https://lifely.nl">software development agencies</a>
           and
-          <a href="https://techminers.com" rel="nofollow"
+          <a href="https://techminers.com"
             >technical due diligence for investors</a
           >
         </p>
 
         <p>
           I cherish my kids and marriage,
-          <a href="https://snoffeecob.com" rel="nofollow"
-            >savor fresh coffee flavors</a
-          >, and perform <a href="https://tedermusic.com" rel="nofollow"
-            >live electronic music</a
-          >. I'm exploring the meaning of health span through nutrition and <a
-            href="https://peterpeerdeman.nl/exercise"
-            rel="nofollow"
-            >exercise</a
-          >. Aside from all that, I'm an avid
-          <a href="https://notes.peterpeerdeman.nl" rel="nofollow"
-            >note maker</a
-          >
-          and I research all sorts of <a href="https://notes.peterpeerdeman.nl/Cyber-Security">security</a>, <a href="https://hashbang.nl/projects" rel="nofollow">software</a> and <a href="https://notes.peterpeerdeman.nl/Hardware">hardware</a> topics</a>. 
+          <a href="https://snoffeecob.com">savor fresh coffee flavors</a>, and
+          perform <a href="https://tedermusic.com">live electronic music</a>. I'm
+          exploring the meaning of health span through nutrition and
+          <a href="https://peterpeerdeman.nl/exercise">exercise</a>. Aside from
+          all that, I'm an avid
+          <a href="https://notes.peterpeerdeman.nl">note maker</a>
+          and I research all sorts of
+          <a href="https://notes.peterpeerdeman.nl/Cyber-Security">security</a>,
+          <a href="https://hashbang.nl/projects">software</a> and
+          <a href="https://notes.peterpeerdeman.nl/Hardware">hardware</a> topics.
         </p>
 
         <footer>
@@ -151,17 +302,22 @@
           <p>
             <a
               class="pp-subtle u-email"
+              rel="me"
               href="mailto:peter@peterpeerdeman.nl?subject=Let%27s%20make%20something%20happen&amp;body=Hi%20Peter%2C"
               aria-label="Email Peter Peerdeman"
               ><svg class="pp-icon" viewBox="0 0 1792 1792" aria-hidden="true" focusable="false"><path transform="translate(0 1536) scale(1 -1)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/></svg
             ></a>
             <a
               class="pp-subtle"
+              rel="me"
               href="https://www.linkedin.com/in/peterpeerdeman"
               aria-label="Peter Peerdeman on LinkedIn"
               ><svg class="pp-icon" viewBox="0 0 1536 1792" aria-hidden="true" focusable="false"><path transform="translate(0 1536) scale(1 -1)" d="M349 911v-991h-330v991h330zM370 1217q1 -73 -50.5 -122t-135.5 -49h-2q-82 0 -132 49t-50 122q0 74 51.5 122.5t134.5 48.5t133 -48.5t51 -122.5zM1536 488v-568h-329v530q0 105 -40.5 164.5t-126.5 59.5q-63 0 -105.5 -34.5t-63.5 -85.5q-11 -30 -11 -81v-553h-329 q2 399 2 647t-1 296l-1 48h329v-144h-2q20 32 41 56t56.5 52t87 43.5t114.5 15.5q171 0 275 -113.5t104 -332.5z"/></svg
             ></a>
-            <a class="pp-subtle" href="https://www.github.com/peterpeerdeman"
+            <a
+              class="pp-subtle"
+              rel="me"
+              href="https://www.github.com/peterpeerdeman"
               aria-label="Peter Peerdeman on GitHub"
               ><svg class="pp-icon" viewBox="0 0 1536 1792" aria-hidden="true" focusable="false"><path transform="translate(0 1536) scale(1 -1)" d="M1536 640q0 -251 -146.5 -451.5t-378.5 -277.5q-27 -5 -39.5 7t-12.5 30v211q0 97 -52 142q57 6 102.5 18t94 39t81 66.5t53 105t20.5 150.5q0 121 -79 206q37 91 -8 204q-28 9 -81 -11t-92 -44l-38 -24q-93 26 -192 26t-192 -26q-16 11 -42.5 27t-83.5 38.5t-86 13.5 q-44 -113 -7 -204q-79 -85 -79 -206q0 -85 20.5 -150t52.5 -105t80.5 -67t94 -39t102.5 -18q-40 -36 -49 -103q-21 -10 -45 -15t-57 -5t-65.5 21.5t-55.5 62.5q-19 32 -48.5 52t-49.5 24l-20 3q-21 0 -29 -4.5t-5 -11.5t9 -14t13 -12l7 -5q22 -10 43.5 -38t31.5 -51l10 -23 q13 -38 44 -61.5t67 -30t69.5 -7t55.5 3.5l23 4q0 -38 0.5 -89t0.5 -54q0 -18 -13 -30t-40 -7q-232 77 -378.5 277.5t-146.5 451.5q0 209 103 385.5t279.5 279.5t385.5 103t385.5 -103t279.5 -279.5t103 -385.5z"/></svg
             ></a>
@@ -171,9 +327,10 @@
             ></a>
             <a
               class="pp-subtle"
+              rel="me"
               href="https://nostr.com/npub1fldgkyxjm92mr7zlrejmhd3ymlzx2awhpxpwserzl5v2w7a7a93q0n7wu7"
               aria-label="Peter Peerdeman on Nostr"
-              ><img style="opacity: 0.4" src="img/nostr.png" alt=""
+              ><img src="img/nostr.png" alt="" width="30" height="30"
             /></a>
           </p>
         </footer>
@@ -185,25 +342,11 @@
         class="u-photo"
         src="img/peterpeerdeman.webp"
         alt="Peter Peerdeman"
-        type="image/webp"
+        width="2480"
+        height="755"
+        loading="lazy"
+        decoding="async"
       />
     </section>
-
-    <script>
-      (function (b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] ||
-          (b[l] = function () {
-            (b[l].q = b[l].q || []).push(arguments);
-          });
-        b[l].l = +new Date();
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = "https://www.google-analytics.com/analytics.js";
-        r.parentNode.insertBefore(e, r);
-      })(window, document, "script", "ga");
-      ga("create", "UA-9153941-1", "auto");
-      ga("send", "pageview");
-    </script>
   </body>
 </html>
