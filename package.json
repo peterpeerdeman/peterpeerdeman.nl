@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "my personal website",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npx parcel serve src/index.html",
-    "build": "npx parcel build --no-cache src/index.html"
+    "serve": "parcel serve --dist-dir .dev src/index.html",
+    "build": "rm -rf dist .parcel-cache && parcel build src/index.html && cp -R static/. dist/"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,7 @@
   },
   "homepage": "https://github.com/peterpeerdeman/peterpeerdeman.nl",
   "devDependencies": {
-    "parcel": "^2.16.4"
+    "parcel": "2.16.4"
   },
   "browserslist": [
     "> 0.5%",

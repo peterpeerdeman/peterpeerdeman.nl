@@ -11,4 +11,4 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, Gulp, Fontawesome
+    HTML5, CSS3, Parcel, Vollkorn
