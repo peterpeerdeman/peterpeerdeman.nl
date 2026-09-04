@@ -1,0 +1,39 @@
+# Served from the Apache host that fronts peterpeerdeman.nl.
+# Every directive is wrapped in <IfModule>, so if a module is missing the
+# block is skipped rather than erroring. If AllowOverride is None on the
+# host, this file is ignored entirely and the site behaves as before.
+
+# Compression. Fonts (woff2) and images are already compressed, so they are
+# deliberately left out.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Parcel fingerprints asset filenames with a content hash, so a given URL
+  # can never change contents. Cache those for a year.
+  <FilesMatch "\.[0-9a-f]{8}\.(css|js|png|jpg|jpeg|webp|ico|woff2|gpg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # index.html carries the references to those hashed names, so it must be
+  # revalidated on every visit or a deploy never becomes visible.
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Unhashed files served verbatim from static/.
+  <FilesMatch "^(og\.jpg|robots\.txt|humans\.txt)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>
