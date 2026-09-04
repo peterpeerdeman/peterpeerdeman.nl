@@ -1,0 +1,59 @@
+name: deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# Two FTP deploys running at once would corrupt the sync state file.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Upload dist to public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+
+          local-dir: ./dist/
+          # The deploy FTP account is chrooted to public_html, so its root IS
+          # the web root. Do not put "public_html/" here.
+          server-dir: ./
+
+          # State file: the action records what it uploaded here and diffs
+          # against it on the next run. Anything it has never uploaded -- i.e.
+          # the bespoke folders in public_html -- is invisible to it and cannot
+          # be deleted. This is what makes the deploy safe.
+          state-name: .deploy-state.json
+
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
+
+          # >>> FIRST RUN ONLY <<<
+          # Leave this true, push, and read the "would upload / would delete"
+          # log. Once the delete list looks right (empty, or only stale hashed
+          # assets), change it to false and every push deploys for real.
+          dry-run: true
+
+          # NEVER set dangerous-clean-slate: true -- it wipes the remote
+          # directory before uploading and would destroy the bespoke folders.
