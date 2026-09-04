@@ -4,7 +4,8 @@
   "description": "my personal website",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx parcel build src/index.html"
+    "serve": "npx parcel serve src/index.html",
+    "build": "npx parcel build --no-cache src/index.html"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   "homepage": "https://github.com/peterpeerdeman/peterpeerdeman.nl",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.0",
-    "parcel": "^2.16.0",
+    "parcel": "latest",
     "sass": "^1.93.2",
     "sharp": "^0.33.5"
   }
