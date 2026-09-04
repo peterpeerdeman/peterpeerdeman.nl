@@ -1,0 +1,34 @@
+#!/bin/sh
+# Builds and deploys the site whenever master is pushed.
+#
+# Enable once with:  npm run hooks:install
+# Skip for one push:  git push --no-verify
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+	case "$remote_ref" in
+	refs/heads/master) ;;
+	*) continue ;;
+	esac
+
+	# Branch deletion (git push origin :master) -- nothing to deploy.
+	if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
+		continue
+	fi
+
+	echo "pre-push: master -> building and deploying"
+
+	if ! npm run build; then
+		echo "pre-push: build failed, aborting push" >&2
+		exit 1
+	fi
+
+	if ! npm run deploy; then
+		echo "pre-push: deploy failed, aborting push" >&2
+		echo "pre-push: push anyway with: git push --no-verify" >&2
+		exit 1
+	fi
+
+	echo "pre-push: deployed"
+done
+
+exit 0
